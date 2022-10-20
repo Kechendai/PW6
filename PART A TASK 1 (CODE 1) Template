@@ -1,0 +1,49 @@
+#include <xc.h>
+#define _XTAL_FREQ 64000000L
+#pragma config FOSC = INTIO67
+#pragma config WDTEN = OFF
+#pragma config LVP = OFF
+#pragma config XINST = OFF
+
+void setup(void);
+void delay (unsigned int x);
+unsigned int Dout;
+
+void main (void)
+{
+setup ();
+//Tulis program anda di sini.
+}
+//Program anda tamat di sini.
+}
+
+
+//**** PROGRAM DIBAWAH INI JANGAN DIUBAH
+
+void setup(void)
+{
+unsigned char i;
+OSCCON = 0b01110010;
+i=255; while(i) i--;
+
+ANSELA = 0b00000000;
+ANSELB = 0b00000000;
+ANSELC = 0b00000000;
+ANSELD = 0b00000000;
+ANSELE = 0b00000000;
+VREFCON0 = 0b10110000;
+ADCON1 = 0b00110000;
+ADCON2 = 0b10000011;
+
+LATA= 0x00;
+LATB= 0x00;
+LATC= 0x00;
+LATD= 0x00;
+LATE= 0x00;
+
+}
+
+void delay (unsigned int x)
+{
+for(;>0;x--)__delay_ms(1);
+}
