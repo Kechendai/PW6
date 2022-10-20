@@ -1,0 +1,10 @@
+while(1)
+{
+ADCON0bits.GO_DONE = x ;
+while (ADCON0bits.GO_DONE == x );
+Dout = ((unsigned int)ADRESH<<8)|ADRESL;
+if (DOUT>250)
+LATD = 255;
+else
+LATD = 0
+}
